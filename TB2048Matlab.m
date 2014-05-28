@@ -236,9 +236,9 @@ while gameover==0
             %Huge props to MatlabDoug on StackOverflow for this entire
             %section. It turns my data into something nice to view
             imagesc(A);            %# Create a colored plot of the matrix values
-            colormap(flipud(gray));  %# Change the colormap to gray (so higher values are
-                                     %#   black and lower values are white)
-
+            map = colormap('autumn'); % added line
+            map(end,:) = [1 1 1]; % added line
+            colormap(flipud(map)); 
             textStrings = num2str(A(:));  %# Create strings from the matrix values
             textStrings = strtrim(cellstr(textStrings));  %# Remove any space padding
             [x,y] = meshgrid(1:4);   %# Create x and y coordinates for the strings
