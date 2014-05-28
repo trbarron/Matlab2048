@@ -8,6 +8,7 @@
 % --------------START----------------------%
 % -----------------------------------------%
 A = zeros(4,4);
+A = [8,16,128,2048;4,4,256,2;0,0,4,16;0,0,0,4]
 gameover = 0;
 iteration = 0;
 time = clock;
@@ -235,8 +236,8 @@ while gameover==0
             
             %Huge props to MatlabDoug on StackOverflow for this entire
             %section. It turns my data into something nice to view
-            imagesc(A);            %# Create a colored plot of the matrix values
-            map = colormap('autumn'); % added line
+            image(2.*A.^(0.5));            %# Create a colored plot of the matrix values
+            map = colormap('HSV'); % added line
             map(end,:) = [1 1 1]; % added line
             colormap(flipud(map)); 
             textStrings = num2str(A(:));  %# Create strings from the matrix values
